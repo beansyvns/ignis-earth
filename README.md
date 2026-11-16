@@ -11,7 +11,7 @@ Next-day wildfire spread forecasts for Greece from free satellite and weather da
 ...
 <p align="center">
   <a href="https://ignis-earth.onrender.com"><b>▶ Live demo</b></a> &nbsp;·&nbsp;
-  <a href="https://youtu.be/YOUR_VIDEO_ID"><b>🎬 Watch the video</b></a> &nbsp;·&nbsp;
+  <a href="https://www.youtube.com/watch?v=2oyLXox-8yg"><b>🎬 Watch the video</b></a> &nbsp;·&nbsp;
   Try the <b>Guided demo</b> button for an 11-step tour
 </p>
 <p align="center"><sub>Free server, so the first load can take about a minute.</sub></p>
