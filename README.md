@@ -2,7 +2,9 @@
 
 Next-day wildfire spread forecasts for Greece from free satellite and weather data, with an honest trust check.
 
-**Live demo:** [Hugging Face link] · **Video:** [YouTube link]
+![IGNIS Earth forecast map](forecast.png)
+
+**Live demo:** [Render link] (free server: the first load can take about a minute while it wakes up) · **Video:** [YouTube link]
 
 ## Inspiration
 Wildfire maps show where fire is burning now, and weather maps show where the wind blows. Deciding where fire will reach tomorrow, and which villages to warn, is still mostly left to people combining the two. We wanted a tool that forecasts where a fire will spread tomorrow, and that admits when it doesn't know.
@@ -16,6 +18,9 @@ IGNIS Earth splits Greece into 5 km squares. Every evening, for each square touc
 - **Trust check:** every forecast is compared with the weather of past fires. Unusual days are flagged, so a crew knows when to lean on the forecast.
 - **Failure days:** we show a real miss and a real false alarm, not just our best days.
 - **Guided demo:** an 11-step walkthrough that opens each feature with live numbers.
+
+## Who it's for
+Fire crews and civil protection teams deciding, each evening, where to send people and which villages to warn tomorrow.
 
 ## How we built it
 - **Data (all free and public):** NASA FIRMS VIIRS active fires (2014–2025), ERA5 weather via Open-Meteo (temperature, humidity, wind, gusts, rain, days since rain, dryness/VPD), Copernicus DEM elevation and slope, and GeoNames villages.
@@ -33,7 +38,15 @@ IGNIS Earth splits Greece into 5 km squares. Every evening, for each square touc
 | PR-AUC (random = 0.013) | **0.040** | 0.021 |
 | Recall | 0.50 | 0.55 |
 
-We catch slightly less spread overall, but with about half the false alarms. On the 2023 validation year, PR-AUC was 0.167 vs 0.052. The test years had only 60 squares where fire spread, so these numbers are noisy.
+We catch slightly less spread overall, but with about half the false alarms.
+
+**Why "top 10 warnings a day"?** Fire spreads into only about 1% of squares, so a model that says "no spread" everywhere would be 99% accurate and useless. A crew can only act on a handful of warnings each evening, so we score each method on how much real spread lands in its 10 riskiest squares per day. On the 2023 validation year, PR-AUC was 0.167 vs 0.052. The test years had only 60 squares where fire spread, so these numbers are noisy.
+
+## Where it fails
+- **A miss (2024-09-29, fire 20240929_2):** fire spread into squares the model did not rank highly.
+- **A false alarm (2024-08-12, fire 20240812_1):** the model warned about squares the fire never reached.
+
+Both are in the website's failure-days view, with the forecast laid over what actually burned.
 
 ## Challenges we ran into
 - **A data leak:** our "how often this square burns" feature first included future years. We rebuilt it from training years only.
@@ -53,12 +66,27 @@ Defining the problem correctly (what counts as "spread") mattered more than the 
 - Testing on other fire-prone regions (Portugal, California, Australia)
 - A stronger trust check, and working with civil protection on what forecasters need
 
+## How to run it
+Online: open the live demo link above.
+
+On your own computer (Python 3.11):
+```
+pip install -r requirements.txt
+python app.py
+```
+Then open http://localhost:7860. The app reads the `demo_*` files in this folder. To rebuild everything from raw data, run `01_data.ipynb`, then `02_model.ipynb`, then `03_demo.ipynb` (made for Google Colab).
+
 ## Files
 - `01_data.ipynb`: builds the dataset
 - `02_model.ipynb`: trains and evaluates the models (saved with outputs)
 - `03_demo.ipynb` / `app.py`: the interactive website and guided demo
+- `demo_*.parquet`, `demo_*.csv`, `demo_settings.json`: the forecasts and scores the website shows
+- `requirements.txt`: Python packages for the website
 
 ## Credits
 Data: NASA FIRMS (VIIRS S-NPP), ECMWF ERA5 via Open-Meteo, Copernicus DEM, GeoNames (CC BY 4.0).
 
 AI assistance: we used Claude (Anthropic) as an AI coding assistant. It wrote most of the code from our design decisions. We chose the problem and the data, set the time-based splits, ran every experiment and tested the site.
+
+## Licence
+MIT, see [LICENSE](LICENSE).
