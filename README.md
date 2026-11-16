@@ -86,7 +86,7 @@ Then open http://localhost:7860. The app reads the `demo_*` files in this folder
 - `requirements.txt`: Python packages for the website
 
 ## Credits
-Data: NASA FIRMS (VIIRS S-NPP), ECMWF ERA5 via Open-Meteo, Copernicus DEM, GeoNames (CC BY 4.0).
+Data: [NASA FIRMS (VIIRS S-NPP)](https://firms.modaps.eosdis.nasa.gov/), [ERA5 via Open-Meteo](https://open-meteo.com/), [Copernicus DEM](https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM), [GeoNames](https://www.geonames.org/) (CC BY 4.0). AI tool: [Claude](https://claude.ai).
 
 AI assistance: we used Claude (Anthropic) as an AI coding assistant. It wrote most of the code from our design decisions. We chose the problem and the data, set the time-based splits, ran every experiment and tested the site.
 
