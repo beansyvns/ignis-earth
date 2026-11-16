@@ -6,9 +6,12 @@ Next-day wildfire spread forecasts for Greece from free satellite and weather da
 
 <img width="1380" height="984" alt="forecast" src="https://github.com/user-attachments/assets/24b0e643-5b48-4791-9134-fdda436fae39" />
 
-**Live demo:** [ignis-earth.onrender.com](https://ignis-earth.onrender.com) (first load can take about a minute) · Try the **Guided demo** button for an 11-step tour.
-
-**Video:** [Watch on YouTube](https://www.youtube.com/watch?v=2oyLXox-8yg)
+<p align="center">
+  <a href="https://ignis-earth.onrender.com"><b>▶ Live demo</b></a> &nbsp;·&nbsp;
+  <a href="https://youtu.be/YOUR_VIDEO_ID"><b>🎬 Watch the video</b></a> &nbsp;·&nbsp;
+  Try the <b>Guided demo</b> button for an 11-step tour
+</p>
+<p align="center"><sub>Free server, so the first load can take about a minute.</sub></p>
 
 ## Inspiration
 Wildfire maps show where fire is burning now, and weather maps show where the wind blows. Deciding where fire will reach tomorrow, and which villages to warn, is still mostly left to people combining the two. We wanted a tool that forecasts where a fire will spread tomorrow, and that admits when it doesn't know.
