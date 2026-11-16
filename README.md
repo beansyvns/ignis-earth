@@ -19,7 +19,7 @@ Next-day wildfire spread forecasts for Greece from free satellite and weather da
 Wildfire maps show where fire is burning now, and weather maps show where the wind blows. Deciding where fire will reach tomorrow, and which villages to warn, is still mostly left to people combining the two. We wanted a tool that forecasts where a fire will spread tomorrow, and that admits when it doesn't know.
 
 ## What it does
-IGNIS Earth splits Greece into 5 km squares. Every evening, for each square touching an active fire, it predicts the chance that fire spreads into it tomorrow.
+IGNIS Earth splits Greece into 5 km squares. On any day of a fire, it looks at every square touching the flames and predicts the chance that fire spreads into it the next day.
 
 - **Next-day spread map:** soft hazard zones around today's fire, with a replay slider of the days before.
 - **Check us:** you can reveal what actually burned the next day, laid over the forecast.
