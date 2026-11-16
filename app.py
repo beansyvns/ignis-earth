@@ -1178,5 +1178,5 @@ with gr.Blocks(title="IGNIS Earth", theme=THEME, css=CSS + TOUR_CSS + TOPO_CSS, 
     for b, p in zip(ex_btns, ex_presets):
         b.click(lambda p=p: p["fire_id"], None, fire)
 
-if __name__ == "__main__":
-    demo.launch()
+    import os
+    demo.launch(server_name="0.0.0.0", server_port=int(os.environ.get("PORT", 7860)))
