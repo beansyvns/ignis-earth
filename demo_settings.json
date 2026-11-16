@@ -1,0 +1,29 @@
+{
+ "threshold": 0.04216473757045447,
+ "cell": 0.05,
+ "season_label": "2024-2025 (test seasons, never seen in training)",
+ "model_label": "M1 logistic regression",
+ "default_day": "2025-08-12",
+ "presets": [
+  {
+   "label": "Big fire day",
+   "day": "2025-08-12",
+   "fire_id": "20250812_6"
+  },
+  {
+   "label": "Model beats the wind rule",
+   "day": "2024-09-30",
+   "fire_id": "20240930_1"
+  },
+  {
+   "label": "Failure day",
+   "day": "2024-09-29",
+   "fire_id": "20240929_2"
+  },
+  {
+   "label": "Big false alarm",
+   "day": "2025-08-13",
+   "fire_id": "20250813_10"
+  }
+ ]
+}
