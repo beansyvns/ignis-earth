@@ -2,7 +2,7 @@
 
 Next-day wildfire spread forecasts for Greece from free satellite and weather data, with an honest trust check.
 
-![IGNIS Earth forecast map](forecast.png)
+<img width="1380" height="984" alt="forecast" src="https://github.com/user-attachments/assets/24b0e643-5b48-4791-9134-fdda436fae39" />
 
 **Live demo:** [Render link] (free server: the first load can take about a minute while it wakes up) · **Video:** [YouTube link]
 
